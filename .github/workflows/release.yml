@@ -1,0 +1,39 @@
+name: release
+
+# A pushed tag vX.Y.Z checks every package against the pinned platform and
+# attaches the set to the GitHub release of that tag: the packages as one
+# archive, the platform's check of each (kind, name, version and the
+# sha256 of the bundle the platform packs from it) and SHA256SUMS.txt.
+# Signing stays with the operator: `scripts/publish.sh` (bnbloc content
+# publish --all packages) packs, uploads, signs with the operator's
+# publisher key and installs each package for every organization.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod }
+      # While go.mod replaces the platform with a checkout beside this one
+      # (until the platform version these packages need is published).
+      - name: Platform checkout for the replace
+        run: if grep -q '=> ../bnbloc' go.mod; then git clone --depth 1 https://github.com/luckylhb90/bnbloc ../bnbloc; fi
+      - run: go vet ./...
+      - run: go test -count=1 ./...
+      - name: Assemble the set
+        run: |
+          mkdir -p dist
+          go tool bnbloc content check --json --all packages > dist/packages.json
+          tar --sort=name --mtime='2000-01-01 00:00Z' --owner=0 --group=0 --numeric-owner \
+            -czf "dist/bnbloc-default-content-${GITHUB_REF_NAME}.tar.gz" packages scripts/publish.sh README.md LICENSE
+          (cd dist && sha256sum * > SHA256SUMS.txt)
+      - name: Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "$GITHUB_REF_NAME" dist/* --title "bnbloc default content $GITHUB_REF_NAME" --generate-notes

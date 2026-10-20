@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod }
+      # While go.mod replaces the platform with a checkout beside this one
+      # (until the platform version these packages need is published).
+      - name: Platform checkout for the replace
+        run: if grep -q '=> ../bnbloc' go.mod; then git clone --depth 1 https://github.com/luckylhb90/bnbloc ../bnbloc; fi
+      # The packages against the pinned platform (go.mod): its validator
+      # through its CLI, its assist output contracts, the SDK and the
+      # contract files it serves to rooms.
+      - run: go vet ./...
+      - run: go test -count=1 ./...
+      - run: go tool bnbloc content check --all packages
