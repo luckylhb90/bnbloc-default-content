@@ -2,13 +2,7 @@ module github.com/luckylhb90/bnbloc-default-content
 
 go 1.24.0
 
-// The platform version the packages are checked against: its validator
-// (through its CLI, `bnbloc content check`), its assist output contracts
-// and the contract files it serves to rooms. Until the platform commit that
-// introduced them is published, the replace below reads a platform checkout
-// beside this one (../bnbloc); then pin it
-// (go get github.com/luckylhb90/bnbloc@<sha>) and drop the replace.
-require github.com/luckylhb90/bnbloc v0.0.0-00010101000000-000000000000
+require github.com/luckylhb90/bnbloc v0.1.1-0.20261020102417-84c28917c8e4
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
@@ -32,7 +26,5 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.2.1 // indirect
 	golang.org/x/crypto v0.45.0 // indirect
 )
-
-replace github.com/luckylhb90/bnbloc => ../bnbloc
 
 tool github.com/luckylhb90/bnbloc/cmd/bnbloc
