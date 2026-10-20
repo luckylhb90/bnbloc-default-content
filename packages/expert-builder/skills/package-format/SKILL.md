@@ -125,7 +125,7 @@ drafts/<name>/
   once published there. The screen that runs a default task reads its
   answer, so a replacement keeps the default's `output`, its `fields`
   with their types and item fields, and its `gate` (the save refuses one
-  that does not): start from the default (`get_component`) and change
+  that does not): start from the default (`components` action `get`) and change
   the wording.
 
 ## SKILL.md (skill packs and experts)
@@ -140,7 +140,7 @@ that description alone), then the steps, checklists and examples.
 - `prompts`: prompt packs, as `"name@^1"`; the expert's quick prompts may
   then `ref` their prompts instead of repeating them.
 - `mcp`: MCP tools the agent needs, each by the name of an MCP tool in the
-  person's Library (`list_components` with kind `mcp`), never a command or
+  person's Library (`components` action `list` with kind `mcp`), never a command or
   a URL: `[{ "name": "issue-tracker", "settings": ["apiToken"] }]`.
   `settings` names the keys of the tool's settings the package relies on;
   their values stay with the platform, the organization or the person,

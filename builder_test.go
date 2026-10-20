@@ -31,7 +31,7 @@ func TestBuilderInstructionsAndFormat(t *testing.T) {
 	if b.Manifest.Kind != kindExpert {
 		t.Fatalf("the builder is a %s", b.Manifest.Kind)
 	}
-	says(t, "the builder's instructions", b.file(t, "INSTRUCTIONS.md"), "save_component", "get_component", "try_draft", "publish_component", "drafts/<name>/", "Save as prompt pack", "starter", "`"+formatSkill+"`", "person's language")
+	says(t, "the builder's instructions", b.file(t, "INSTRUCTIONS.md"), "`components` action `save`", "`components` action `get`", "`components` tool's `try` action", "`components` action `publish`", "drafts/<name>/", "Save as prompt pack", "starter", "`"+formatSkill+"`", "person's language")
 	says(t, "the format skill", b.file(t, formatSkillFile), kindExpert, kindSkill, kindPrompt, kindAssist, "requires.prompts", "`mcp`", "`team`", "mcp.stdio", "mcp.http:", `"scripts"`, "`starter: true`", "`ref`", "`everyRoom: true`")
 }
 

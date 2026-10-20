@@ -49,7 +49,7 @@ In the same run, save the first screen as `cover.png` beside its
 `index.html` (16:10, e.g. 1280x800, within the work's cover image limit in
 the room records' `content-limits.md`): its card's cover in the room and
 the gallery. PNG, JPEG or WebP only, never SVG. Asked to publish
-it, `save_component` with its `artifactId` saves it as a work with its
+it, `components` action `save` with its `artifactId` saves it as a work with its
 recipe.
 
 ## The SDK
