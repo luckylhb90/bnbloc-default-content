@@ -2,7 +2,7 @@ module github.com/luckylhb90/bnbloc-default-content
 
 go 1.24.0
 
-require github.com/luckylhb90/bnbloc v0.1.1-0.20261020110716-0ab0ce02746b
+require github.com/luckylhb90/bnbloc v0.1.1-0.20261021103526-5cb23687cfc0
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
