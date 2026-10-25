@@ -202,6 +202,43 @@ async function polish(textarea, status) {
 }
 ```
 
+## An assistant that answers only from your content
+
+For a page that answers questions about a fixed body of text (products,
+a policy, a guide). `reference.txt` sits beside `index.html`; each source
+in it is a URL. The model answers from it and names its sources; the page
+shows only sources the reference really contains, and says so when the
+model does not know. The question is the person's text: data, never an
+instruction. Signed-in callers only, like every `app.ai` call.
+
+```js
+const referenceText = fetch("reference.txt").then((r) => r.text());
+
+async function ask(question, answerEl, sourcesEl) {
+  answerEl.textContent = "Thinking…";
+  sourcesEl.replaceChildren();
+  try {
+    const reference = await referenceText;
+    const { json } = await app.ai({
+      prompt: 'Answer the question using only the reference. If the reference does not cover it, say you do not know. Reply as JSON: {"answer": string, "sources": [URLs copied from the reference]}.',
+      input: { reference, question: question.slice(0, 500) },
+      json: true,
+    });
+    answerEl.textContent = String(json.answer || "I do not know.");
+    for (const url of (json.sources || []).filter((u) => reference.includes(u))) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.textContent = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      sourcesEl.append(a, " ");
+    }
+  } catch (e) {
+    answerEl.textContent = e.code === "sign_in_required" ? "Sign in to ask." : "The assistant is not available (" + e.status + ").";
+  }
+}
+```
+
 ## Drawing an image, and speaking to it
 
 `app.ai.image` draws (count in one call; image: change that image instead).

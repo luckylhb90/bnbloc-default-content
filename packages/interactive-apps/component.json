@@ -1,10 +1,10 @@
 {
   "kind": "bnbloc.skill.package/v1",
   "name": "interactive-apps",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "displayName": "Interactive apps",
-  "description": "Builds pages people use from a link whose answers bnbloc keeps (polls, surveys, sign-ups, forms, boards, games) with the app SDK, and reads the collected data back for a report.",
+  "description": "Builds any page people open from a link (landing pages, assistants, polls, forms, boards, games) with the app SDK: bnbloc publishes and shares it, keeps its data and answers its AI calls with the organization's model, with no server or key. Reads the collected data back for a report.",
   "category": "apps",
-  "tags": ["apps", "polls", "surveys", "forms"],
+  "tags": ["apps", "pages", "ai", "share", "polls", "forms"],
   "skills": ["interactive-apps"]
 }

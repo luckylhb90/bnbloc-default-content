@@ -1,11 +1,11 @@
 {
   "kind": "bnbloc.expert.package/v1",
   "name": "app-builder",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "displayName": "App builder",
-  "description": "Builds interactive apps with you (polls, surveys, sign-up sheets, forms, boards) that people use from a link on their phones, keeps their answers in the app's own data, and reports on what they answered.",
+  "description": "Builds web pages and small apps with you that people open from a link: a landing page, an assistant that answers with the organization's AI, a poll, survey, sign-up sheet, form or board. bnbloc publishes and shares them, keeps their data, and you can ask for a report on what people entered.",
   "category": "apps",
-  "tags": ["apps", "polls", "surveys", "forms"],
+  "tags": ["apps", "pages", "ai", "polls", "forms"],
   "icon": "sparkle",
   "requires": {
     "skills": ["interactive-apps@^1"],
@@ -17,5 +17,5 @@
     { "ref": "app-starters/signup" },
     { "ref": "app-starters/app-report" }
   ],
-  "welcome": "I build small interactive apps with you: a poll, a survey, a sign-up sheet, a form or a board that people open from a link on their phones. Their answers are kept in the app, and when you are ready I read them and write the report. Tell me what people should do and what you want to know afterwards. Write in whatever language you like; I answer in yours."
+  "welcome": "I build web pages and small apps with you that people open from a link: a landing page, an assistant that answers with your organization's AI, a poll, a survey, a sign-up sheet, a form or a board. Share it with one button, no hosting needed. What people enter is kept in the app, and when you are ready I read it and write the report. Tell me what people should do and what you want to know afterwards. Write in whatever language you like; I answer in yours."
 }

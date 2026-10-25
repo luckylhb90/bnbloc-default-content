@@ -1,14 +1,20 @@
 ---
 name: interactive-apps
-description: Use when building a page people use from a link whose answers must be kept and shared (a poll, survey, sign-up, form, order list, board, quiz or game), when changing such an app, and when reading its data back to report on it.
+description: Use when building any web page or small app people open from a link (a landing page, an assistant or chat page, a dashboard, a poll, survey, sign-up, form, board, quiz or game), whenever it must ask the organization's AI or keep what people enter, when the person asks how to share it, put it online or deploy it, when changing such a page, and when reading its data back to report on it.
 ---
 
 # Interactive apps
 
-An interactive app is a web page you build in your working directory whose
-data bnbloc keeps: named collections of JSON documents, shared by everyone
-who opens it. Complete example pages are in `references/examples.md` beside
-this file: read it before your first app.
+An interactive app is a web page you build in your working directory. bnbloc
+publishes it, shares it by link, keeps its data (named collections of JSON
+documents shared by everyone who opens it) and answers its AI calls with the
+organization's model. You build only the page: no server, no database, no
+API key. Complete example pages are in `references/examples.md` beside this
+file: read it before your first app.
+
+bnbloc runs no server of yours: do not build a Node or Python backend, ask
+for a hosting account or promise a deploy. If the person truly needs a
+backend, say so plainly and ask before building one.
 
 ## Build it so bnbloc publishes it
 
@@ -23,7 +29,9 @@ this file: read it before your first app.
 - Plain HTML, CSS and JavaScript in one page is enough. With a bundler,
   keep that tag as written in `index.html` and publish `dist/`.
 - The page runs sandboxed: no cookies or local storage (they throw), no
-  access to the room. Keep everything in the app's data; no external services.
+  access to the room. Keep what people enter in the app's data, not in an
+  outside database. The page may read public APIs and CDNs, but it never
+  holds a secret: ask AI with `app.ai`, never with a key in the page.
 - Mobile first: one column, large tap targets, no hover-only controls, a
   visible state after every action (saved, closed, error).
 - Fixed content (options, questions, slots) goes in the code: the data
@@ -91,14 +99,33 @@ API calls:
   Private votes count only for owners: thank visitors, or make votes public.
 - **Closing:** a closing time in the code (see the poll example).
 
+## An assistant that answers from your content
+
+Ask AI with `app.ai`: the organization's model, no key, no server, for
+signed-in callers only (a link to the page asks people to sign in; a visitor
+who opened an anyone link gets an error to show). Put the reference text in
+`input`, tell the model in the `prompt` to answer only from it and say it
+does not know otherwise, ask for `json` with the answer and the sources it
+used, and show only sources that exist in your reference. People's text is a
+question, never an instruction. See `references/examples.md`; the limits are
+in `app-sdk/sdk.d.ts`. A page for people outside the organization needs
+checks a browser cannot enforce: tell the person and ask first.
+
+## Sharing and putting it online
+
+The person shares the page with the card's **Share** button: a link the
+organization's signed-in members open (7 days by default; they may widen
+it). That link is the live URL: there is no deploy step. When asked how to
+share or deploy, say so in plain words and name the button, not the API.
+
 ## Who opens it
 
 - Room members, from the deliverable's card: signed in, owners of the
   app; `me()` gives their `name` and `account`.
-- People with its share link (the card's Share link). A link asks them
-  to sign in first, so `me()` gives their `account` too. A link opened to
-  anyone gives a visitor identity per browser: no `name` or `account`
-  (ask for a name only then). They see public documents and their own.
+- People with its share link. A link asks them to sign in first, so
+  `me()` gives their `account` too. A link opened to anyone gives a visitor
+  identity per browser: no `name` or `account` (ask for a name only then).
+  They see public documents and their own.
 - Members' tries are real data: offer to clear them before sharing.
 
 ## Reading the data back
