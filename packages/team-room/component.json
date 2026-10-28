@@ -1,0 +1,69 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "team-room",
+  "version": "1.0.0",
+  "displayName": "Team room",
+  "description": "A team's everyday room: announcements, requests and decisions, engineering work and on-call, and a place to chat.",
+  "category": "rooms",
+  "tags": [
+    "room",
+    "team"
+  ],
+  "welcome": "Welcome to the team room. Read #announcements first, ask in #help, and take decisions to #decisions so they are easy to find later.",
+  "sections": [
+    {
+      "name": "Product",
+      "rules": "Bring the background and the goal. Decided items go to #decisions."
+    },
+    {
+      "name": "Engineering",
+      "rules": "Post a minimal reproduction with a code question. Production issues go to #on-call first."
+    }
+  ],
+  "channels": [
+    {
+      "name": "announcements",
+      "purpose": "Notices for the whole team",
+      "rules": "Notices only; discuss them in the channel they belong to.",
+      "settings": {
+        "whoPosts": "admins"
+      }
+    },
+    {
+      "name": "help",
+      "purpose": "Questions that fit nowhere else; someone will point you on"
+    },
+    {
+      "name": "random",
+      "purpose": "Anything else, people only",
+      "settings": {
+        "noAgents": true
+      }
+    },
+    {
+      "name": "requests",
+      "purpose": "New requests and feedback, one thread each",
+      "section": "Product"
+    },
+    {
+      "name": "decisions",
+      "purpose": "Decisions that were made, one a post",
+      "section": "Product",
+      "rules": "One decision a post: the decision, why, the date and who owns it."
+    },
+    {
+      "name": "dev",
+      "purpose": "Work in progress and code discussion",
+      "section": "Engineering"
+    },
+    {
+      "name": "on-call",
+      "purpose": "Alerts and handovers",
+      "section": "Engineering",
+      "rules": "Each alert: service, symptom, impact, who is on it.",
+      "settings": {
+        "slowModeSeconds": 30
+      }
+    }
+  ]
+}

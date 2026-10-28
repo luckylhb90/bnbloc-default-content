@@ -1,0 +1,59 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "project-room",
+  "version": "1.0.0",
+  "displayName": "Project room",
+  "description": "One project from plan to delivery: the plan, the work in progress, the risks and the decisions, and the updates people outside the project read.",
+  "category": "rooms",
+  "tags": [
+    "room",
+    "project"
+  ],
+  "welcome": "This room runs one project. The plan is pinned in #plan; post progress in #work, risks in #risks and decisions in #decisions. #updates is what people outside the project read.",
+  "sections": [
+    {
+      "name": "Plan",
+      "rules": "Change the plan here first, then tell #updates."
+    },
+    {
+      "name": "Delivery",
+      "rules": "One piece of work a thread; say when it is done and how it was checked."
+    }
+  ],
+  "channels": [
+    {
+      "name": "updates",
+      "purpose": "Weekly status for people outside the project",
+      "rules": "Short: what moved, what is next, what needs help.",
+      "settings": {
+        "whoPosts": "admins"
+      }
+    },
+    {
+      "name": "plan",
+      "purpose": "Scope, milestones and owners",
+      "section": "Plan"
+    },
+    {
+      "name": "decisions",
+      "purpose": "Decisions and their reasons, one a post",
+      "section": "Plan",
+      "rules": "One decision a post: the decision, why, the date and who owns it."
+    },
+    {
+      "name": "risks",
+      "purpose": "Risks and blockers, with an owner each",
+      "section": "Plan"
+    },
+    {
+      "name": "work",
+      "purpose": "Work in progress, one thread each",
+      "section": "Delivery"
+    },
+    {
+      "name": "review",
+      "purpose": "Reviews of finished work before it ships",
+      "section": "Delivery"
+    }
+  ]
+}

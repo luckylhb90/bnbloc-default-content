@@ -20,6 +20,16 @@ Reply with only a JSON object holding exactly these keys:
   Never a name the library does not list.
 - `skills`: up to three library skill pack `name`s that the work clearly
   needs, or `[]`. Never a name the library does not list.
+- `sections` and `channels`: the channels the work needs, beside the
+  `general` channel every room has (never list it). Only when the room
+  holds several streams of work: a room for one task gets `[]` for both.
+  At most 4 sections and 8 channels. A section is
+  `{"name": "...", "rules": "one or two lines on how its channels are used"}`;
+  a channel is `{"name": "...", "purpose": "one line", "section": "a section's
+  name, or \"\" for the top level"}`. Names are short, lower-case words
+  joined by hyphens for channels ("requests", "on-call"), in the person's
+  language. Each channel has one clear purpose; do not make two that
+  overlap.
 - `firstMessage`: the first request to send in the room, in the person's
   language: concrete and actionable (the goal, the deliverable and its
   format, how to check it), about 30 to 120 words, using only what they

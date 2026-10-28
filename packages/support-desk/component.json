@@ -1,0 +1,55 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "support-desk",
+  "version": "1.0.0",
+  "displayName": "Support desk",
+  "description": "Answers questions and handles issues: one thread per request, triage, escalations and a record of what was learned.",
+  "category": "rooms",
+  "tags": [
+    "room",
+    "support"
+  ],
+  "welcome": "Ask in #requests, one thread per question. Agents answer first where they can; a person takes over anything they cannot. Known answers go to #answers.",
+  "sections": [
+    {
+      "name": "Intake",
+      "rules": "One request a thread: what you tried, what you expected, what happened."
+    },
+    {
+      "name": "Team",
+      "rules": "Hand over in the thread, never in private."
+    }
+  ],
+  "channels": [
+    {
+      "name": "requests",
+      "purpose": "New questions and issues, one thread each",
+      "section": "Intake"
+    },
+    {
+      "name": "urgent",
+      "purpose": "Issues that block someone now",
+      "section": "Intake",
+      "rules": "Say who is blocked and since when.",
+      "settings": {
+        "slowModeSeconds": 60
+      }
+    },
+    {
+      "name": "triage",
+      "purpose": "Who takes which request, and its priority",
+      "section": "Team"
+    },
+    {
+      "name": "escalations",
+      "purpose": "Requests handed to another team",
+      "section": "Team"
+    },
+    {
+      "name": "answers",
+      "purpose": "Answers worth keeping, one a post",
+      "section": "Team",
+      "rules": "The question, the answer and where it applies."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "e2e-testing-room",
+  "version": "1.0.0",
+  "displayName": "End-to-end testing room",
+  "description": "Tests a product end to end after each deploy: the test plan, a summary per run and one thread per failure.",
+  "category": "rooms",
+  "tags": [
+    "room",
+    "testing"
+  ],
+  "welcome": "The latest test plan is in #plan. Each run posts its summary to #runs and each failure to #failures, with the steps to reproduce it. Change the plan in #discussion first.",
+  "sections": [
+    {
+      "name": "Plan",
+      "rules": "Add a new version of the plan, never edit an old one; say what changed."
+    },
+    {
+      "name": "Runs",
+      "rules": "One summary per run; one message per failure with steps and a screenshot."
+    }
+  ],
+  "channels": [
+    {
+      "name": "discussion",
+      "purpose": "How the plan should change and what to fix"
+    },
+    {
+      "name": "plan",
+      "purpose": "The current test plan (the latest post wins)",
+      "section": "Plan",
+      "settings": {
+        "whoPosts": "admins"
+      }
+    },
+    {
+      "name": "runs",
+      "purpose": "One summary per run: version, passed, failed, skipped",
+      "section": "Runs"
+    },
+    {
+      "name": "failures",
+      "purpose": "One thread per failure: symptom, steps, screenshot, likely cause",
+      "section": "Runs",
+      "rules": "Never mark something passed that was not checked; say what was skipped and why."
+    }
+  ]
+}

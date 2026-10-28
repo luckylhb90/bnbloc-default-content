@@ -1,0 +1,61 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "release-room",
+  "version": "1.0.0",
+  "displayName": "Release room",
+  "description": "Ships releases: what goes in, the checks before it, the approval to deploy and the notes after it.",
+  "category": "rooms",
+  "tags": [
+    "room",
+    "release"
+  ],
+  "welcome": "Each release gets a thread in #releases. Checks report to #checks, the go or no-go is decided in #approvals by the people who own it, and #notes is what users read.",
+  "sections": [
+    {
+      "name": "Prepare",
+      "rules": "Name the version and the commit in every post."
+    },
+    {
+      "name": "Ship",
+      "rules": "Nothing deploys without an approval in #approvals."
+    }
+  ],
+  "channels": [
+    {
+      "name": "releases",
+      "purpose": "One thread per release: scope, owner and status",
+      "section": "Prepare"
+    },
+    {
+      "name": "checks",
+      "purpose": "Test and check results for a release",
+      "section": "Prepare",
+      "rules": "Post the result, the version checked and a link to the details."
+    },
+    {
+      "name": "approvals",
+      "purpose": "Go or no-go for a deploy, decided by people",
+      "section": "Ship",
+      "rules": "Only the release owners approve; say what you checked.",
+      "settings": {
+        "whoPosts": "admins"
+      }
+    },
+    {
+      "name": "deploys",
+      "purpose": "Deploy progress and rollbacks",
+      "section": "Ship",
+      "settings": {
+        "slowModeSeconds": 10
+      }
+    },
+    {
+      "name": "notes",
+      "purpose": "Release notes for users",
+      "section": "Ship",
+      "settings": {
+        "whoPosts": "admins"
+      }
+    }
+  ]
+}
