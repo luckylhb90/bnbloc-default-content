@@ -1,0 +1,23 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "find-channel",
+  "version": "1.0.0",
+  "displayName": "Where do I ask about this?",
+  "description": "Answers which of a room's channels a question belongs in, from the channels' names, purposes and rules.",
+  "category": "assistance",
+  "tags": ["assist", "channels"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "answer", "description": "One or two sentences: where to ask and why" },
+    {
+      "name": "channels",
+      "description": "The channels that fit, best first, at most three",
+      "type": "items",
+      "item": [
+        { "name": "channelId", "description": "The channel's id exactly as listed" },
+        { "name": "why", "description": "One short sentence: why it fits" }
+      ]
+    }
+  ]
+}

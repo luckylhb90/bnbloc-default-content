@@ -1,0 +1,15 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "draft-channel-purpose",
+  "version": "1.0.0",
+  "displayName": "Draft a channel's purpose",
+  "description": "Reads a channel's name and its recent messages and drafts the one line under its name that says what the channel is for.",
+  "category": "authoring",
+  "tags": ["assist", "channels"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "purpose", "description": "One line: what the channel is for" }
+  ],
+  "context": ["room"]
+}

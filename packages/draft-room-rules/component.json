@@ -1,0 +1,15 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "draft-room-rules",
+  "version": "1.0.0",
+  "displayName": "Draft a room's rules and welcome",
+  "description": "Drafts a room's rules and the welcome a new member reads first, from the room's description and its channels.",
+  "category": "authoring",
+  "tags": ["assist", "channels", "rooms"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "rules", "description": "The room's rules, short Markdown" },
+    { "name": "welcome", "description": "Two or three sentences a new member reads first" }
+  ]
+}
