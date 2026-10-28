@@ -37,10 +37,8 @@ github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqw
 github.com/golang-jwt/jwt/v5 v5.2.1 h1:OuVbFODueb089Lh128TAcimifWaLhJwVflnrgM17wHk=
 github.com/golang-jwt/jwt/v5 v5.2.1/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVIyoH402zdk=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
-github.com/luckylhb90/bnbloc v0.1.1-0.20261020110716-0ab0ce02746b h1:zBRnLwB11SgREG25S+atfjT6BzraYIplaOJ7IXFmdRE=
-github.com/luckylhb90/bnbloc v0.1.1-0.20261020110716-0ab0ce02746b/go.mod h1:B2OrRTYPq/+ipaoiV3LthCyJfc5k7LaDB/kI/w952hY=
-github.com/luckylhb90/bnbloc v0.1.1-0.20261021103526-5cb23687cfc0 h1:CWOWUtJbVkrjKfcOl5/h6cJcV9WNA5zR3SkxhTEgu38=
-github.com/luckylhb90/bnbloc v0.1.1-0.20261021103526-5cb23687cfc0/go.mod h1:B2OrRTYPq/+ipaoiV3LthCyJfc5k7LaDB/kI/w952hY=
+github.com/luckylhb90/bnbloc v0.1.1-0.20261028104001-4864834eb96f h1:qZvSXNJftktqQwyYcjayR3fIQVbWPPtMmVsw96l+MP0=
+github.com/luckylhb90/bnbloc v0.1.1-0.20261028104001-4864834eb96f/go.mod h1:NvPFA5HZA9LkYRb17Nv+mCSnftrtWAobBp//6AcEXuo=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
