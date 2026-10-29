@@ -1,0 +1,56 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "tracker-channel",
+  "version": "1.0.0",
+  "displayName": "Tracker",
+  "description": "Each item is a thread with a status that moves from new to done, tagged by area, so the channel reads as a board.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "tracker",
+    "board"
+  ],
+  "channel": {
+    "purpose": "Track work items, one thread each, from new to done",
+    "rules": "One item per post. Keep its status current; tag its area.",
+    "settings": {
+      "postingStyle": "threads",
+      "statuses": [
+        {
+          "id": "new",
+          "name": "New"
+        },
+        {
+          "id": "in-progress",
+          "name": "In progress"
+        },
+        {
+          "id": "blocked",
+          "name": "Blocked"
+        },
+        {
+          "id": "done",
+          "name": "Done"
+        }
+      ],
+      "tags": [
+        {
+          "id": "bug",
+          "name": "Bug",
+          "color": "#ef4444"
+        },
+        {
+          "id": "feature",
+          "name": "Feature",
+          "color": "#3b82f6"
+        },
+        {
+          "id": "chore",
+          "name": "Chore",
+          "color": "#a3a3a3"
+        }
+      ],
+      "postTemplate": "What needs doing?\n\nHow do we know it is done?"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "help-desk-channel",
+  "version": "1.0.0",
+  "displayName": "Help desk",
+  "description": "Questions answered first by the channel's agent; a person takes over what it cannot answer.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "support",
+    "help-desk"
+  ],
+  "channel": {
+    "purpose": "Ask a question; the agent answers first, a person follows up",
+    "rules": "One question per post. Say what you tried and what you expected. Mark the answer that solved it.",
+    "settings": {
+      "postingStyle": "threads",
+      "agentParticipation": "questions",
+      "statuses": [
+        {
+          "id": "open",
+          "name": "Open"
+        },
+        {
+          "id": "answered",
+          "name": "Answered"
+        },
+        {
+          "id": "needs-person",
+          "name": "Needs a person"
+        }
+      ],
+      "postTemplate": "What are you trying to do?\n\nWhat did you try?\n\nWhat happened instead?"
+    }
+  }
+}

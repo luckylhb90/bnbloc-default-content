@@ -1,0 +1,19 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "forum-channel",
+  "version": "1.0.0",
+  "displayName": "Forum",
+  "description": "Every post opens its own thread, so requests, ideas and questions each keep their own conversation.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "forum"
+  ],
+  "channel": {
+    "purpose": "One thread per topic: requests, ideas and questions",
+    "rules": "Start a new post for a new topic, with a title that says what it is about. Reply in the post's thread, not in a new one.",
+    "settings": {
+      "postingStyle": "threads"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "draft-channel-preset",
+  "version": "1.0.0",
+  "displayName": "Draft a channel preset",
+  "description": "Turns a sentence about a kind of channel (a help desk, a tracker) into its purpose, rules and settings, shown before anything is applied.",
+  "category": "authoring",
+  "tags": [
+    "assist",
+    "channels",
+    "channel-preset"
+  ],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    {
+      "name": "purpose",
+      "description": "One line under the channel's name: what it is for"
+    },
+    {
+      "name": "rules",
+      "description": "How the channel is used, a few short sentences"
+    },
+    {
+      "name": "settings",
+      "description": "The channel's settings as a JSON object (see the instructions for the keys)"
+    }
+  ]
+}

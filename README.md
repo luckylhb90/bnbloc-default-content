@@ -23,8 +23,9 @@ member's copy.
 | `interactive-apps`, `media-skills` | skill packs | Building apps on the app SDK; making images and audio with the media tools |
 | `starters` | prompt pack | The examples above an empty room's composer (`everyRoom: true`: offered in every empty room) |
 | `app-starters`, `file-prompts`, `code-prompts`, `diagram-prompts` | prompt packs | App requests; suggestions for a file or a selection in it |
+| `forum-channel`, `help-desk-channel`, `announcements-channel`, `tracker-channel`, `log-channel`, `qa-channel` | channel presets | Kinds of channel a channel's owners apply from its menu ("Apply a preset…"): a purpose, rules and settings in one step, undoable |
 | `team-room`, `project-room`, `release-room`, `support-desk`, `e2e-testing-room` | room packages | Room templates offered under "Start from" in New room: the sections and channels a new room starts with (purposes, rules, who posts, slow mode) |
-| `enhance-prompt`, `describe-work`, `describe-room`, `draft-expert`, `draft-skill-pack`, `draft-prompt-pack`, `plan-room`, `draft-schedule`, `explain-source-use`, `review-skill`, `fill-settings`, `suggest-skill-dirs`, `find-a-way` | assists | The prompts behind the web's AI buttons, one per task name |
+| `enhance-prompt`, `describe-work`, `describe-room`, `draft-expert`, `draft-skill-pack`, `draft-prompt-pack`, `plan-room`, `draft-schedule`, `explain-source-use`, `review-skill`, `fill-settings`, `suggest-skill-dirs`, `find-a-way`, `draft-channel-preset` | assists | The prompts behind the web's AI buttons, one per task name |
 
 Each directory of `packages/` is a content package in bnbloc's format
 (`component.json`, and `INSTRUCTIONS.md`, skills or a README by kind); the

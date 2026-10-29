@@ -1,0 +1,20 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "log-channel",
+  "version": "1.0.0",
+  "displayName": "Log",
+  "description": "Where alerts, deploys and scheduled reports land; people read it, a slow mode keeps replies short.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "log",
+    "alerts"
+  ],
+  "channel": {
+    "purpose": "Alerts, deploys and reports from systems and scheduled tasks",
+    "rules": "Systems and scheduled tasks post here. Reply in a thread to follow up on an entry.",
+    "settings": {
+      "slowModeSeconds": 60
+    }
+  }
+}

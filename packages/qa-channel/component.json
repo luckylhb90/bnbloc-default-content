@@ -1,0 +1,31 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "qa-channel",
+  "version": "1.0.0",
+  "displayName": "Q&A",
+  "description": "Questions with answers worth keeping: the best reply is marked, and answered threads build the channel's FAQ.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "qa",
+    "knowledge"
+  ],
+  "channel": {
+    "purpose": "Questions and the answers worth keeping",
+    "rules": "Search before you ask. When a reply answers your question, mark it as the answer.",
+    "settings": {
+      "postingStyle": "threads",
+      "agentParticipation": "questions",
+      "statuses": [
+        {
+          "id": "open",
+          "name": "Open"
+        },
+        {
+          "id": "answered",
+          "name": "Answered"
+        }
+      ]
+    }
+  }
+}

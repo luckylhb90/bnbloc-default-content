@@ -1,0 +1,19 @@
+{
+  "kind": "bnbloc.channel-preset.package/v1",
+  "name": "announcements-channel",
+  "version": "1.0.0",
+  "displayName": "Announcements",
+  "description": "News for everyone in the room, posted by its owner and admins; discussion happens elsewhere.",
+  "category": "channels",
+  "tags": [
+    "channel-preset",
+    "announcements"
+  ],
+  "channel": {
+    "purpose": "Announcements from the room's owner and admins",
+    "rules": "Only news here. Questions and discussion go to the room's other channels.",
+    "settings": {
+      "whoPosts": "admins"
+    }
+  }
+}
