@@ -1,0 +1,16 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "summarize-thread",
+  "version": "1.0.0",
+  "displayName": "Sum up a thread",
+  "description": "Reads a thread that is being closed and writes what was decided and what is still open, for a reply to the message it was opened from.",
+  "category": "authoring",
+  "tags": ["assist", "channels", "threads"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "decided", "description": "What the thread decided, one line each", "type": "list" },
+    { "name": "open", "description": "What is still open, one line each", "type": "list" },
+    { "name": "summary", "description": "One or two sentences on the thread as a whole" }
+  ]
+}

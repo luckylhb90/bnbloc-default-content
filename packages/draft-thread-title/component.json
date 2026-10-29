@@ -1,0 +1,14 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "draft-thread-title",
+  "version": "1.0.0",
+  "displayName": "Name a thread",
+  "description": "Reads a thread's first message and its first replies and drafts a short title that says what the thread is about.",
+  "category": "authoring",
+  "tags": ["assist", "channels", "threads"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "title", "description": "A short title: what the thread is about" }
+  ]
+}
