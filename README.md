@@ -25,7 +25,7 @@ member's copy.
 | `app-starters`, `file-prompts`, `code-prompts`, `diagram-prompts` | prompt packs | App requests; suggestions for a file or a selection in it |
 | `forum-channel`, `help-desk-channel`, `announcements-channel`, `tracker-channel`, `log-channel`, `qa-channel` | channel presets | Kinds of channel a channel's owners apply from its menu ("Apply a preset…"): a purpose, rules and settings in one step, undoable |
 | `team-room`, `project-room`, `release-room`, `support-desk`, `e2e-testing-room` | room packages | Room templates offered under "Start from" in New room: the sections and channels a new room starts with (purposes, rules, who posts, slow mode) |
-| `enhance-prompt`, `describe-work`, `describe-room`, `draft-expert`, `draft-skill-pack`, `draft-prompt-pack`, `plan-room`, `draft-schedule`, `explain-source-use`, `review-skill`, `fill-settings`, `suggest-skill-dirs`, `find-a-way`, `draft-channel-preset` | assists | The prompts behind the web's AI buttons, one per task name |
+| `enhance-prompt`, `describe-work`, `describe-room`, `draft-expert`, `draft-skill-pack`, `draft-prompt-pack`, `plan-room`, `draft-schedule`, `explain-source-use`, `review-skill`, `fill-settings`, `suggest-skill-dirs`, `find-a-way`, `draft-channel-preset`, `catch-up`, `translate` | assists | The prompts behind the web's AI buttons, one per task name |
 
 Each directory of `packages/` is a content package in bnbloc's format
 (`component.json`, and `INSTRUCTIONS.md`, skills or a README by kind); the
@@ -36,7 +36,7 @@ directory is the package's name.
 - **The format and its limits**, checked by the platform's own validator:
   `bnbloc content check <dir>` (or `--all packages`), the same check a save
   and a platform install make.
-- **An assist's output contract.** The web and the gateway run 13 tasks by
+- **An assist's output contract.** The web and the gateway run 21 tasks by
   name and read their answers; `bnbloc content contracts` lists what each
   must answer (its output, its fields with their types and item fields,
   its gate, and the closed values the caller acts on). A package under one

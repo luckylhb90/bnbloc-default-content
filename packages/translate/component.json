@@ -1,0 +1,11 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "translate",
+  "version": "1.0.0",
+  "displayName": "Translate a message",
+  "description": "Translates one room message into the member's language; the original stays in the room.",
+  "category": "assistance",
+  "tags": ["assist", "channels"],
+  "icon": "sparkle",
+  "output": "text"
+}

@@ -39,6 +39,8 @@ github.com/golang-jwt/jwt/v5 v5.2.1/go.mod h1:pqrtFR0X4osieyHYxtmOUWsAWrfe1Q5UVI
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/luckylhb90/bnbloc v0.1.1-0.20261029134914-bef8ba6980d9 h1:KuzTWPn9pTj3DKEA4ixhOwJvhmRkxk2vV9vKDtbsisY=
 github.com/luckylhb90/bnbloc v0.1.1-0.20261029134914-bef8ba6980d9/go.mod h1:Q61ApBFiEFDJqupbEUxbT6jh+t2H2S/omkDrruEaNY4=
+github.com/luckylhb90/bnbloc v0.1.1-0.20261102143054-7ebdf14bd7b9 h1:8q8OQxXiJsdG0ZPtv76TenGoMfhBwPo9xgGhPtXYsIg=
+github.com/luckylhb90/bnbloc v0.1.1-0.20261102143054-7ebdf14bd7b9/go.mod h1:Q61ApBFiEFDJqupbEUxbT6jh+t2H2S/omkDrruEaNY4=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=

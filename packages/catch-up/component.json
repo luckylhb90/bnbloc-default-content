@@ -1,0 +1,17 @@
+{
+  "kind": "bnbloc.assist.package/v1",
+  "name": "catch-up",
+  "version": "1.0.0",
+  "displayName": "Catch me up",
+  "description": "Reads the messages of a channel a member has not read yet and says what happened, what was decided, what is still open and what is for them.",
+  "category": "assistance",
+  "tags": ["assist", "channels"],
+  "icon": "sparkle",
+  "output": "json",
+  "fields": [
+    { "name": "summary", "description": "One or two sentences: what happened while the member was away" },
+    { "name": "decided", "description": "What was decided, one line each", "type": "list" },
+    { "name": "open", "description": "What is still open, one line each", "type": "list" },
+    { "name": "forYou", "description": "What asks something of the member or names them, one line each", "type": "list" }
+  ]
+}
